@@ -1,0 +1,110 @@
+SKYBOUND
+Version: v0.1.0-alpha
+Release Type: Initial Alpha Release
+
+============================================================
+OVERVIEW
+============================================================
+
+SKYBOUND v0.1.0-alpha is the first playable build of the game.
+
+This version introduces the core arcade flight-runner concept, where the
+player controls an aircraft, avoids hazards, survives enemy attacks,
+collects resources, and completes progressively harder missions.
+
+This build establishes the technical and gameplay foundation for future
+versions of SKYBOUND.
+
+============================================================
+CORE FEATURES
+============================================================
+
+- Added the first playable arcade flight-runner prototype.
+- Added responsive aircraft movement using keyboard controls.
+- Added a ten-level campaign with increasing difficulty.
+- Added three difficulty modes:
+
+  - Rookie
+  - Veteran
+  - Extreme
+
+- Added mission-based distance progression.
+- Added environmental obstacles, including:
+
+  - Towers
+  - Floating mines
+
+- Added multiple enemy types, including:
+
+  - Turrets
+  - Patrol aircraft
+  - Chaser aircraft
+
+- Added dynamic weather conditions:
+
+  - Clear
+  - Sunset
+  - Storm
+  - Night
+
+- Added wind effects that influence aircraft movement.
+- Added fuel management.
+- Added collectible coins.
+- Added fuel pickups.
+- Added temporary shield and boost power-ups.
+- Added scoring and mission completion rewards.
+- Added level-complete, game-over, and campaign-complete screens.
+- Added pause and mute functionality.
+- Added procedural particle effects, explosions, rain, and lightning.
+- Added procedural engine sounds, sound effects, and background music.
+- Added a complete HUD displaying mission, score, fuel, and progress data.
+
+============================================================
+CONTROLS
+============================================================
+
+Arrow Keys / WASD
+    Move the aircraft
+
+P
+    Pause or resume the game
+
+M
+    Mute or unmute audio
+
+Enter
+    Select menu options
+
+============================================================
+TECHNICAL INFORMATION
+============================================================
+
+- Built using HTML5 Canvas.
+- Written with vanilla JavaScript, HTML, and CSS.
+- Uses no external libraries or runtime dependencies.
+- Runs directly inside a modern web browser.
+- All gameplay systems are contained inside a single HTML file.
+- Visuals and audio are generated procedurally.
+
+============================================================
+CURRENT LIMITATIONS
+============================================================
+
+- No persistent save or progress system.
+- Player progression resets after closing or refreshing the browser.
+- No boss encounters.
+- No player weapon or shooting system.
+- Limited enemy and obstacle variety.
+- Visual assets are primarily procedural placeholders.
+- Gameplay balance is still experimental.
+- Audio and visual presentation require further polishing.
+
+============================================================
+DEVELOPMENT STATUS
+============================================================
+
+Status: Early Alpha
+
+The core gameplay loop is functional, but the game is still in active
+development. Future versions are expected to expand combat, progression,
+visuals, enemies, level design, and overall presentation.

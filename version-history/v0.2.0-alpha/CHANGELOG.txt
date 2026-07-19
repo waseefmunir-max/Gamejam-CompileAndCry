@@ -1,0 +1,175 @@
+SKYBOUND: GODFALL
+Version: v0.2.0-alpha
+Previous Version: v0.1.0-alpha
+Release Type: Major Alpha Update
+
+============================================================
+OVERVIEW
+============================================================
+
+SKYBOUND v0.2.0-alpha expands the original arcade flight-runner
+prototype into a combat-focused top-down flight game.
+
+This update introduces player weapons, destructible enemies, boss
+encounters, aircraft health, improved progression, and a darker campaign
+identity under the new title SKYBOUND: GODFALL.
+
+============================================================
+ADDED
+============================================================
+
+- Added the new game title: SKYBOUND: GODFALL.
+
+- Added a runway takeoff sequence.
+
+- Added aircraft acceleration and lift-off mechanics.
+
+- Added player shooting using dual forward guns.
+
+- Added destructible enemy aircraft and obstacles.
+
+- Added multiple combat-focused enemy types:
+
+  - Turrets
+  - Patrol aircraft
+  - Chaser aircraft
+  - Blimps
+  - Floating mines
+
+- Added player hull health.
+
+- Added damage from:
+
+  - Enemy projectiles
+  - Mines
+  - Aircraft collisions
+  - Other environmental hazards
+
+- Added repair pickups that restore hull health.
+
+- Added boss encounters in selected missions.
+
+- Added a multi-phase boss battle system.
+
+- Added an ultimate final boss encounter in the GODFALL mission.
+
+- Added boss health bars and boss warning messages.
+
+- Added enemy destruction scoring.
+
+- Added explosion effects and improved combat particles.
+
+- Added coin-based mission unlocking.
+
+- Added mission completion tracking for each difficulty.
+
+- Added different score multipliers and unlock requirements based on
+  difficulty.
+
+- Added optional external sprite support.
+
+- Added automatic procedural fallback graphics when sprite files are
+  unavailable.
+
+- Added new mission names, descriptions, and darker campaign themes.
+
+============================================================
+CHANGED
+============================================================
+
+- Reworked the original side-scrolling flight-runner gameplay into a
+  top-down vertical flight gauntlet.
+
+- Changed the player's starting position and flight perspective.
+
+- Replaced basic distance survival with a combination of:
+
+  - Takeoff
+  - Aircraft combat
+  - Resource collection
+  - Boss battles
+  - Mission progression
+
+- Reworked the level campaign with new names and objectives.
+
+- Rebalanced Rookie, Veteran, and Extreme difficulty modes.
+
+- Difficulty now affects:
+
+  - Enemy variety
+  - Enemy firing speed
+  - Player damage received
+  - Flight speed
+  - Score multiplier
+  - Coin requirements
+
+- Expanded the HUD to display:
+
+  - Hull health
+  - Fuel
+  - Score
+  - Coins
+  - Mission information
+  - Boss health
+
+- Improved sound effects for:
+
+  - Player weapons
+  - Enemy weapons
+  - Damage
+  - Explosions
+  - Boss warnings
+  - Mission completion
+
+- Improved screen shake and visual feedback during combat.
+
+============================================================
+REMOVED
+============================================================
+
+- Removed the original horizontal side-scrolling gameplay format.
+
+- Removed the previous obstacle-only mission structure.
+
+- Removed the original campaign level names from v0.1.0-alpha.
+
+============================================================
+KNOWN LIMITATIONS
+============================================================
+
+- Progress is not permanently saved after the browser is closed or
+  refreshed.
+
+- Bosses currently share similar visual and attack foundations.
+
+- External artwork is optional and may not yet be available.
+
+- Game balance is still experimental.
+
+- Some enemy spawning and collision behavior may require refinement.
+
+- Audio and visuals are still mainly procedural.
+
+============================================================
+TECHNICAL INFORMATION
+============================================================
+
+- Built using HTML5 Canvas, vanilla JavaScript, HTML, and CSS.
+
+- Uses no external libraries or runtime dependencies.
+
+- Runs directly in a modern web browser.
+
+- Remains contained inside a single HTML file.
+
+- Supports optional sprite files with automatic procedural fallback art.
+
+============================================================
+DEVELOPMENT STATUS
+============================================================
+
+Status: Alpha
+
+This version establishes the core combat and boss systems that will serve
+as the foundation for future gameplay, progression, and GameJam theme
+updates.
