@@ -1,362 +1,81 @@
-SKYBOUND: GODFALL — KICKOFF
-Version: v0.4.0-alpha
-Previous Version: v0.3.0-alpha
-Release Type: Major Systems Update
-
-============================================================
-OVERVIEW
-============================================================
-
-SKYBOUND: GODFALL v0.4.0-alpha significantly expands the game
-with structured combat waves, persistent progression, save systems,
-new weapons, improved bosses, configurable controls, and a complete
-KICKOFF-focused gameplay loop.
-
-The SkyLink Ignition mechanic introduced in the previous version has
-been expanded and renamed as the KICKOFF chain system.
-
-This version moves the project from an experimental gameplay prototype
-toward a more complete and replayable arcade campaign.
-
-============================================================
-ADDED
-============================================================
-
-WAVE SYSTEM
-------------
-
-- Added structured enemy waves for every level.
-
-- Added different wave counts based on difficulty:
-
-  - Rookie: 3 waves
-  - Veteran: 4 waves
-  - Extreme: 5 waves
-
-- Added enemy-count scaling based on:
-
-  - Current level
-  - Current wave
-  - Selected difficulty
-
-- Added enemy health scaling across later waves and levels.
-
-- Added wave-start and wave-complete notifications.
-
-- Added wave restart support after player death.
-
-- Added automatic progression from waves to boss encounters or level
-  completion.
-
-KICKOFF SYSTEM
---------------
-
-- Renamed the SkyLink chain system to KICKOFF for stronger alignment
-  with the GameJam theme.
-
-- Added a relay that must be destroyed to kick off the assault.
-
-- Added KICKOFF chain tracking.
-
-- Added marked-target selection and energy-link effects.
-
-- Added chain-based score multipliers.
-
-- Added KICKOFF milestone rewards:
-
-  - KICKOFF x5:
-    Shield, additional missiles, and combat support.
-
-  - KICKOFF x10:
-    Afterburner boost, missiles, and a temporary weapon upgrade.
-
-  - KICKOFF x15:
-    Hull repair, missiles, and an extended weapon upgrade.
-
-- Added a re-kickoff visual flare after defeating a boss.
-
-WEAPONS AND COMBAT
-------------------
-
-- Added homing missiles.
-
-- Added missile ammunition.
-
-- Added missile pickups.
-
-- Added missile explosion damage.
-
-- Added temporary weapon upgrades:
-
-  - Triple Shot
-  - Spread Shot
-  - Increased Damage
-
-- Added weapon-upgrade timers.
-
-- Added expanded support pickups:
-
-  - Fuel
-  - Hull repair
-  - Shield
-  - Boost
-  - Missiles
-  - Weapon upgrades
-
-- Added improved enemy health and damage balancing.
-
-- Added larger enemy pools for later levels and difficulties.
-
-BOSSES
-------
-
-- Added twelve boss variations across:
-
-  - Four boss encounters
-  - Three difficulty modes
-
-- Added unique boss names, colour palettes, and visual forms.
-
-- Added multi-phase boss attack patterns.
-
-- Added stronger final-boss scaling.
-
-- Added dedicated boss warnings and phase-change notifications.
-
-- Added boss-specific music mode support.
-
-CAMPAIGN AND LEVELS
--------------------
-
-- Added ten visually distinct campaign biomes:
-
-  - Ocean
-  - Desert
-  - Grass Field
-  - Mountains
-  - Snow
-  - Jungle
-  - Swamp
-  - Volcanic
-  - Canyon
-  - Sky-Void
-
-- Added biome-specific procedural environments.
-
-- Added updated mission names, descriptions, and weather assignments.
-
-- Added best-score tracking for completed missions.
-
-- Added persistent level progression.
-
-SAVE SYSTEM
------------
-
-- Added browser-based persistent save data.
-
-- Added quick-save functionality.
-
-- Added automatic saving.
-
-- Added ten named manual save slots.
-
-- Added save-slot loading.
-
-- Added save timestamps.
-
-- Added wave-start snapshots for restarting the current wave.
-
-- Added level restart support.
-
-- Added persistent progress across browser sessions.
-
-SETTINGS AND CONTROLS
----------------------
-
-- Added a complete settings menu.
-
-- Added separate music and sound-effect volume controls.
-
-- Added configurable keyboard controls.
-
-- Added control rebinding.
-
-- Added persistent control and volume settings.
-
-- Added improved pause-menu options.
-
-- Added support for returning to saved games from the main menu.
-
-GOD MODE
---------
-
-- Added a hidden God Mode protected by an access code.
-
-- Added increased movement speed and weapon damage in God Mode.
-
-- Added invulnerability while God Mode is active.
-
-- Added cheated-run tracking.
-
-- Scores and campaign progress earned using God Mode are excluded from
-  normal records.
-
-AUDIO AND ASSETS
-----------------
-
-- Added support for external music files.
-
-- Added separate music tracks based on:
-
-  - Difficulty
-  - Normal combat
-  - Storm or boss combat
-
-- Added support for external sound-effect files.
-
-- Added support for external biome and boss images.
-
-- Added automatic procedural audio fallback when external files are
-  unavailable.
-
-- Added automatic procedural visual fallback when external artwork is
-  unavailable.
-
-USER INTERFACE
---------------
-
-- Added save and load screens.
-
-- Added settings and control-remapping screens.
-
-- Added improved mission-selection interface.
-
-- Added wave information to the HUD.
-
-- Added missile ammunition display.
-
-- Added active weapon-upgrade indicators.
-
-- Added KICKOFF chain information.
-
-- Added detailed game-over information, including:
-
-  - Wave reached
-  - Boss phase reached
-  - Score
-  - Coins
-  - Best chain
-
-- Added expanded level-complete and campaign-complete screens.
-
-============================================================
-CHANGED
-============================================================
-
-- Replaced the previous timer-based enemy spawning system with structured
-  combat waves.
-
-- Changed mission progression from distance-based survival to wave-based
-  combat.
-
-- Renamed SkyLink Ignition to the KICKOFF system.
-
-- Reworked enemy spawning, health, movement, and difficulty scaling.
-
-- Reworked the chain target system using persistent enemy identifiers.
-
-- Reworked score calculation and milestone rewards.
-
-- Reworked level progression and coin-unlock requirements.
-
-- Reworked boss encounters with unique variants and attack phases.
-
-- Reworked the player aircraft weapon system.
-
-- Reworked pickup spawning and combat-support rewards.
-
-- Reworked the game state to support saving and restoring complete runs.
-
-- Reworked the menu, pause screen, settings, and result screens.
-
-- Improved canvas scaling for different browser-window sizes.
-
-- Improved visual effects, explosions, particles, screen shake, and
-  combat feedback.
-
-- Improved audio handling with external files and procedural fallbacks.
-
-============================================================
-REMOVED
-============================================================
-
-- Removed the previous continuous, timer-based enemy-spawning structure.
-
-- Removed the previous distance-goal progression system.
-
-- Removed the SkyLink name from the primary chain mechanic.
-
-- Removed session-only campaign progression.
-
-- Replaced the earlier limited boss structure with a larger boss catalog.
-
-============================================================
-KNOWN LIMITATIONS
-============================================================
-
-- Game balance across all levels and difficulties is still experimental.
-
-- Save files may become incompatible with major future changes.
-
-- Some external artwork and audio assets may still be unavailable.
-
-- Procedural fallback visuals remain placeholders.
-
-- Enemy, missile, and boss collision behaviour may require refinement.
-
-- Some menus and interfaces may require additional usability testing.
-
-- God Mode access and cheated-run handling may require further testing.
-
-- Performance may vary when a large number of enemies, projectiles, and
-  visual effects appear simultaneously.
-
-============================================================
-TECHNICAL INFORMATION
-============================================================
-
-- Built using HTML5 Canvas, vanilla JavaScript, HTML, and CSS.
-
-- Uses no required external libraries or runtime dependencies.
-
-- Runs directly inside a modern web browser.
-
-- All game systems remain contained inside a single HTML file.
-
-- Uses browser local storage for:
-
-  - Campaign progress
-  - Settings
-  - Quick saves
-  - Autosaves
-  - Manual save slots
-
-- Save data uses a versioned serializable structure.
-
-- Enemy and pickup objects use unique identifiers for restoring gameplay
-  state and tracking chain targets.
-
-- External image and audio files are optional.
-
-============================================================
-DEVELOPMENT STATUS
-============================================================
-
-Status: Feature-Rich Alpha
-
-This version establishes the main campaign structure, KICKOFF gameplay,
-wave progression, save system, expanded combat, and persistent settings.
-
-Further development will focus on balancing, bug fixing, visual
-polishing, audio integration, and refining the overall gameplay
-experience.
+SKYBOUND: GODFALL — v0.4.0-alpha "Kickoff"
+Changes since v0.3.0-alpha
+File: skybound_godfall_v0.4.0-alpha.html
+========================================================
+
+MAJOR SYSTEMS BUILD. This is the largest single jump in the project —
+nearly every core game system either debuts here or is rebuilt.
+Title changes to SKYBOUND: GODFALL — KICKOFF.
+
+ADDED — Kickoff theme integration
+- "Kickoff" branding replaces "SkyLink" throughout (triggerKickoff,
+  triggerReKickoff) — relay-destruction start-of-level mechanic now
+  explicitly tied to the jam's "Kickoff" theme
+
+ADDED — Wave system
+- Levels now split into waves (startWave, clearWave, spawnWaveEnemy,
+  waveEnemyCount, waveEnemyHp) that escalate in count and toughness
+- Difficulty-based wave counts (Rookie 3 / Veteran 4 / Extreme 5)
+
+ADDED — 10-level structure with biomes
+- Full 10-level roster defined, each with name, tagline, biome
+  (ocean/desert/field/valley/snow/jungle/swamp/volcanic/canyon/
+  godfall-void) and boss slot assignment
+- drawBiome for per-level visual identity
+
+ADDED — Combat expansion
+- Missile system (fireMissile, explodeMissile)
+- Weapon power-ups: triple/spread/damage (grantWeapon, milestoneReward)
+- Chain-kill milestones now grant real rewards (shield/boost/missiles/
+  weapons at combo thresholds) instead of score-only payoff
+
+ADDED — Difficulty tiers
+- Rookie / Veteran / Extreme selection screen (drawDifficulty) with
+  distinct scaling
+
+ADDED — Save & settings systems
+- 10 manual save slots (saveSlot, loadSlot, getSlots) plus quick save
+  (saveQuick) and autosave (saveAuto)
+- Settings persistence via localStorage (persistSettings, loadJSON/
+  saveJSON)
+- Progress persistence across sessions (persistProgress)
+
+ADDED — Pause menu & controls
+- Pause menu (drawPause) with Resume/Restart Level/Restart Wave
+  (restartLevel, restartWave)/Main Menu
+- Volume sliders (drawSliders, handleSliderDrag, syncVolumes)
+- Control remapping screen (drawControls)
+
+ADDED — Cheat system (first pass)
+- GOD MODE toggle (settings.godMode) — grants invincibility and
+  10x damage; entry screen exists (drawGodCode) but is not yet
+  code-gated (see Known Issues)
+
+ADDED — Audio pipeline
+- playSfx / preloadAudioBase / musicMode / refreshMusic — structure
+  for loading external audio files with procedural fallback
+
+ADDED — Screens
+- drawSaves, drawSettings, drawComplete, drawVictory, drawGameOver
+  as distinct dedicated screens (previously merged/implicit)
+
+REMOVED (superseded)
+- igniteSky, spawnKickoffWave, onKey, spawnEnemy, spawnObst,
+  spawnCoins, sprite, blob, mixc, drawPanel — replaced by the
+  wave/spawn/rendering systems above
+
+KNOWN ISSUES (carried into v0.5.0 fix pass)
+- GOD MODE toggle is reachable and functional WITHOUT entering the
+  unlock code — the code-entry screen exists but doesn't gate access
+- Level 10 (GODFALL) still runs through a normal wave sequence before
+  the boss instead of dropping straight into the "final encounter" —
+  can produce a stuck/unclear state since LV10 was designed as
+  boss-only
+- Restarting a wave can leave the Kickoff relay in a state where it
+  doesn't respawn, softlocking that retry path
+- Pause → Controls/Save-Slots screens don't reliably return to the
+  paused game afterward
+- HUD elements from the old code haven't yet been reworked with
+  waves===0 guards for the LV10 boss-only edge case
+- Takeoff prompt still refers to the original hardcoded key name
+  rather than the player's remapped key

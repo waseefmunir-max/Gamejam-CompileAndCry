@@ -1,490 +1,55 @@
-SKYBOUND: GODFALL — KICKOFF EDITION
-Version: v0.5.0-alpha
-Previous Version: v0.4.0-alpha
-Release Type: Major Gameplay and Presentation Overhaul
-
-============================================================
-OVERVIEW
-============================================================
-
-SKYBOUND: GODFALL v0.5.0-alpha introduces the Kickoff Edition,
-a broad redesign of the campaign's gameplay flow, boss encounters,
-environments, user interface, controls, audio, and progression systems.
-
-The KICKOFF mechanic is now integrated into every stage of combat.
-
-Instead of destroying only one relay at the beginning of a mission,
-the player must destroy a new relay before each wave. Every relay
-destruction kicks off the next assault and creates a repeated gameplay
-cycle built directly around the GameJam theme.
-
-============================================================
-ADDED
-============================================================
-
-REPEATED KICKOFF FLOW
----------------------
-
-- Added a new Sky Relay before every combat wave.
-
-- Added repeated KICKOFF events throughout each mission.
-
-- Added separate relay messages for:
-
-  - Initial mission kickoff
-  - Subsequent wave kickoffs
-
-- Added tracking for the total number of kickoffs triggered during a
-  mission.
-
-- Added KICKOFF count to mission-complete and campaign-complete screens.
-
-- Added an immediate relay-to-boss transition for the final GODFALL
-  mission.
-
-- Added dedicated wave-start visual flashes, particles, sound effects,
-  and notifications.
-
-ENVIRONMENTS AND WEATHER
-------------------------
-
-- Added a redesigned procedural biome-rendering system.
-
-- Added ten visually distinct biome styles:
-
-  - Ocean
-  - Field
-  - Desert
-  - Valley
-  - Canyon
-  - Jungle
-  - Swamp
-  - Snow
-  - Volcano
-  - Void
-
-- Added biome-specific environmental features, including:
-
-  - Islands
-  - Grass patches
-  - Sand dunes
-  - Mountain ridges
-  - Canyon mesas
-  - Jungle canopies
-  - Swamp bogs
-  - Ice formations
-  - Lava fields
-  - Void structures
-
-- Added dynamic weather sequences for individual missions.
-
-- Added transitions between:
-
-  - Clear weather
-  - Sunset
-  - Storm
-  - Night
-
-- Added weather-based wind, darkness, rain, lightning, and screen tint.
-
-BOSS ENCOUNTERS
----------------
-
-- Added a redesigned catalog of twelve bosses.
-
-- Added four boss families with three difficulty-specific variants each.
-
-- Added the following boss variants:
-
-  FIRST BOSS FAMILY
-  - Iron Howl
-  - Razor Choir
-  - Marrow Saint
-
-  SECOND BOSS FAMILY
-  - The Butcher
-  - Glass Tyrant
-  - Hollow Choir
-
-  THIRD BOSS FAMILY
-  - Executioner
-  - Pale Verdict
-  - Gallows King
-
-  FINAL BOSS FAMILY
-  - Godfall: Dawn
-  - Godfall: Dusk
-  - Godfall: Eternal
-
-- Added distinct visual designs, colour palettes, and silhouettes for
-  each boss variant.
-
-- Added boss-family-specific attack systems.
-
-- Added unique attack patterns, including:
-
-  - Aimed projectile bursts
-  - Bullet fans
-  - Carpet-fire attacks
-  - Circular bullet rings
-  - Twin spirals
-  - Chaser deployment
-  - Cross-shaped attacks
-  - Projectile walls
-  - Rotating bullet patterns
-  - Final-phase combined attacks
-
-- Added four phases to the final GODFALL boss encounter.
-
-- Added unique boss artwork fallback for every boss family.
-
-AUDIO
------
-
-- Added separate calm and intense music states for each difficulty.
-
-- Added a dedicated boss music state.
-
-- Added dynamic music switching based on:
-
-  - Difficulty
-  - Weather
-  - Combat intensity
-  - Active boss encounter
-
-- Added support for external MP3 music and sound effects.
-
-- Added a dedicated audio directory for external sound files.
-
-- Added improved procedural fallback music when external tracks are
-  unavailable.
-
-- Added redesigned procedural fallback sound effects.
-
-USER INTERFACE
---------------
-
-- Added a redesigned main menu.
-
-- Added the official Kickoff Edition presentation.
-
-- Added the tagline:
-
-  "Every war starts with one shot. Kick it off."
-
-- Added an expanded HUD displaying:
-
-  - Current level
-  - Difficulty
-  - Biome
-  - Score
-  - Coins and unlock requirement
-  - Current wave
-  - Hull health
-  - Fuel
-  - Missile ammunition
-  - Active shield
-  - Active boost
-  - Temporary weapon upgrades
-  - KICKOFF chain
-  - Chain timer
-  - Radar information
-
-- Added missile ammunition indicators.
-
-- Added active-effect status chips.
-
-- Added a low-fuel warning.
-
-- Added a dedicated final-encounter HUD state.
-
-- Added redesigned level-complete, game-over, pause, settings, save,
-  and victory screens.
-
-- Added direct access to restart the current wave from:
-
-  - The pause menu
-  - The game-over screen
-
-CONTROLS
---------
-
-- Added simultaneous default support for:
-
-  - Arrow-key movement
-  - WASD movement
-
-- Added persistent control bindings.
-
-- Added control-reset functionality.
-
-- Added individual bindings for:
-
-  - Movement
-  - Primary fire
-  - Missile fire
-  - Pause
-
-- Added improved keyboard-input normalization.
-
-- Added mouse-controlled sliders and menu interaction.
-
-EXTERNAL ASSET SUPPORT
-----------------------
-
-- Added support for external relay artwork.
-
-- Added support for external runway artwork.
-
-- Added individual external sprite slots for all twelve bosses.
-
-- Added separate directories for:
-
-  - Visual assets
-  - Audio assets
-
-- Added automatic procedural fallback content when external files are
-  unavailable.
-
-============================================================
-CHANGED
-============================================================
-
-KICKOFF AND WAVE FLOW
----------------------
-
-- Reworked the mission flow so every wave must be manually kicked off.
-
-- Changed wave progression from:
-
-  Automatic wave transition after the initial relay
-
-  To:
-
-  Destroy relay → start wave → clear wave → destroy next relay
-
-- Reworked the KICKOFF mechanic into a recurring part of the entire
-  mission instead of only the mission opening.
-
-- Reworked wave completion and transition timing.
-
-- Reworked the Level 10 flow into a dedicated final encounter.
-
-COMBAT
-------
-
-- Rebalanced enemy pools for each difficulty.
-
-- Rookie now focuses on turrets and mines.
-
-- Veteran adds patrol aircraft and blimps.
-
-- Extreme includes the complete enemy roster.
-
-- Reworked enemy wave size and health scaling.
-
-- Rebalanced player fuel consumption.
-
-- Reworked missile targeting and damage.
-
-- Reworked temporary weapon upgrades:
-
-  - Triple Shot
-  - Spread Fire
-  - Heavy Rounds
-
-- Reworked KICKOFF milestone rewards.
-
-- Added missile limits and revised missile rewards.
-
-- Rebalanced coin, fuel, repair, missile, and power-up spawn timing.
-
-- Reworked enemy recycling to prevent active wave enemies from becoming
-  permanently unreachable.
-
-BOSSES
-------
-
-- Replaced the previous general boss attack structure with
-  boss-family-specific attacks.
-
-- Reworked boss health scaling based on difficulty.
-
-- Reworked boss visual forms and names.
-
-- Reworked boss phases and attack timing.
-
-- Reworked the final boss into four escalating phases.
-
-- Changed boss encounters to use dedicated music.
-
-CAMPAIGN
---------
-
-- Reworked mission biome assignments.
-
-- Reworked several mission descriptions.
-
-- Reworked weather combinations across the campaign.
-
-- Reworked coin requirements for unlocking later missions.
-
-- Reworked the visual identity of all ten levels.
-
-SAVE AND PROGRESS
------------------
-
-- Reworked the browser-storage save structure.
-
-- Reworked save snapshots to store the current:
-
-  - Difficulty
-  - Level
-  - Campaign progress
-  - Player state
-  - World state
-  - HUD data
-  - Boss state
-  - Weather state
-  - Enemies
-  - Enemy projectiles
-  - Pickups
-  - Environment data
-
-- Retained ten manual save slots.
-
-- Retained automatic saving.
-
-- Retained quick access to the save menu from the pause screen.
-
-- Reworked save restoration and linked-target recovery.
-
-- Simplified persistent campaign records around level completion and
-  best coin totals.
-
-SETTINGS AND AUDIO
-------------------
-
-- Reworked the control system to support multiple default keys for an
-  action.
-
-- Reworked volume settings and slider interaction.
-
-- Changed external audio storage from the shared assets directory to a
-  dedicated audio directory.
-
-- Reworked music naming into:
-
-  - Difficulty-based calm tracks
-  - Difficulty-based intense tracks
-  - Boss track
-
-- Reworked procedural music and sound-effect generation.
-
-VISUAL PRESENTATION
--------------------
-
-- Rebuilt the procedural environment renderer.
-
-- Reworked player, enemy, pickup, boss, relay, and runway rendering.
-
-- Improved particles, missile trails, explosions, weather effects, and
-  KICKOFF flashes.
-
-- Reworked the radar and HUD layout.
-
-- Improved menu and button feedback.
-
-- Added a crosshair-style mouse cursor.
-
-============================================================
-REMOVED
-============================================================
-
-- Removed the previous single-relay-only mission structure.
-
-- Removed automatic transitions between normal waves.
-
-- Replaced the previous boss catalog and generic boss behaviour.
-
-- Replaced the previous static single-weather assignment used by several
-  missions.
-
-- Replaced the previous external asset naming structure.
-
-- Removed persistent best-score tracking from the simplified campaign
-  progress records.
-
-============================================================
-KNOWN LIMITATIONS
-============================================================
-
-- Game balance across all levels and difficulties remains experimental.
-
-- Boss attacks and projectile density may require additional balancing.
-
-- Save data may become incompatible with later major versions.
-
-- Active player bullets and missiles are not preserved when restoring a
-  saved game.
-
-- External audio currently expects MP3 files using the required naming
-  structure.
-
-- External artwork and audio are optional and may not yet be available.
-
-- Procedural fallback assets remain temporary placeholders.
-
-- Some menus and control-binding interactions require further testing.
-
-- Performance may decrease during projectile-heavy boss phases.
-
-- Browser local storage can be cleared by the user or browser, removing
-  saved progress.
-
-============================================================
-TECHNICAL INFORMATION
-============================================================
-
-- Built using HTML5 Canvas.
-
-- Written with vanilla JavaScript, HTML, and CSS.
-
-- Uses no required external libraries or runtime dependencies.
-
-- Runs directly inside a modern web browser.
-
-- All gameplay logic remains contained inside a single HTML file.
-
-- Uses browser local storage for:
-
-  - Campaign progress
-  - Settings
-  - Save slots
-  - Autosave data
-
-- External visual assets are loaded from:
-
-  assets/
-
-- External audio assets are loaded from:
-
-  audio/
-
-- Procedural graphics and audio are automatically used when external
-  files cannot be loaded.
-
-============================================================
-DEVELOPMENT STATUS
-============================================================
-
-Status: Expanded Alpha Candidate
-
-This version establishes the Kickoff Edition as the most complete alpha
-build of SKYBOUND: GODFALL so far.
-
-The repeated relay system now integrates the KICKOFF theme throughout
-the entire mission structure, while redesigned bosses, biomes, weather,
-controls, saves, audio, and interface systems provide a stronger
-foundation for final balancing, testing, asset integration, and release
-preparation.
+SKYBOUND: GODFALL — v0.5.0-alpha "Kickoff Edition"
+Changes since v0.4.0-alpha
+File: skybound_godfall_v0.5.0-alpha.html
+========================================================
+
+FIX & POLISH PASS on the v0.4.0 systems build, plus internal cleanup.
+Title changes to SKYBOUND: GODFALL — Kickoff Edition. This is the
+current build.
+
+FIXED — all Known Issues from v0.4.0
+- GOD MODE is now properly code-gated: a 6-digit unlock code must be
+  entered before the toggle becomes accessible (godUnlocked flag);
+  previously the toggle worked with no code at all
+- Level 10 (GODFALL) now correctly skips the wave sequence and drops
+  straight into the boss-only "final encounter" (world.waves===0
+  handling added throughout: HUD wave readout, progress bar, death
+  screen, level-complete screen)
+- Restart Wave no longer softlocks — the Kickoff relay now correctly
+  respawns on wave restart
+- Pause → Controls and Pause → Save Slots now correctly return to the
+  paused game instead of losing that context
+- Takeoff prompt now names the player's actual (possibly remapped)
+  throttle key instead of a hardcoded default
+
+ADDED — Boss depth
+- Multi-phase boss AI (bossPhases, bossAttack) — bosses now change
+  attack patterns as their HP drops, rather than a single fixed
+  pattern for the whole fight
+- Per-boss art variety expanded (bossArt) across all 12 unique
+  boss/difficulty combinations
+
+ADDED — Audio/music matrix
+- updateMusic / musicKeyFor select tracks based on BOTH weather and
+  difficulty tier, replacing the single-axis musicMode from v0.4.0
+- tone / sfx / noise — refined procedural audio fallback layer
+
+ADDED — Death/completion detail
+- Game Over screen now explicitly shows which wave (or "FINAL
+  ENCOUNTER" for LV10) and which boss phase the player died on
+
+CHANGED — Internal cleanup (no functional change to most)
+- Large-scale function renaming/simplification pass for readability
+  and file size (e.g. spawnKickoffRelay -> spawnRelay, triggerKickoff
+  -> kickOff, saveSlot/loadSlot/getSlots -> readSlots/writeSlots,
+  persistSettings/persistProgress -> saveSettings/saveProgress,
+  chooseNextLink -> chooseLink, registerChainKill -> chainKill)
+- Save-slot storage consolidated under a single SLOTS constant with
+  readSlots()/writeSlots() helpers wrapping localStorage directly
+
+KNOWN LIMITATIONS (open going into playtesting)
+- Balance is untested at this scope: takeoff difficulty, boss HP,
+  coin thresholds, and wave difficulty curve all still need real
+  playtesting feedback
+- Sprites/audio are still procedural fallback only — real asset
+  files (assets/, audio/) have not yet been dropped in

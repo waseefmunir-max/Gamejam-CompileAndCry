@@ -1,110 +1,34 @@
-SKYBOUND
-Version: v0.1.0-alpha
-Release Type: Initial Alpha Release
+SKYBOUND — v0.1.0-alpha
+IUT ICT FEST 2026 GameJam
+File: skybound_v0.1.0-alpha.html
+========================================================
 
-============================================================
-OVERVIEW
-============================================================
+FIRST PLAYABLE BUILD.
 
-SKYBOUND v0.1.0-alpha is the first playable build of the game.
+Single-file HTML5 Canvas prototype (960x600). No external dependencies,
+no assets — everything drawn/synthesized procedurally.
 
-This version introduces the core arcade flight-runner concept, where the
-player controls an aircraft, avoids hazards, survives enemy attacks,
-collects resources, and completes progressively harder missions.
+WHAT'S IN THIS BUILD
+- Arcade flight-runner core loop: fly forward, dodge/collect, survive
+- Player plane rendered and controlled with Arrow keys / WASD
+- Procedural scrolling background (hills, clouds)
+- Obstacle spawning (towers, mines) and pickups (fuel, power-ups)
+- Basic collision + hit handling
+- Fuel meter and shield mechanic
+- Weather variation (cosmetic pass — clear/storm states)
+- Level select screen (placeholder — single track of progression)
+- Procedural sound via Web Audio (no external audio files)
+- Pause (P) and mute (M) controls
 
-This build establishes the technical and gameplay foundation for future
-versions of SKYBOUND.
+KNOWN LIMITATIONS
+- Side-view runner perspective — this is a prototype of the CONCEPT,
+  not the final game direction
+- No bosses, no waves, no theme-specific mechanics yet
+- No save system — progress does not persist between sessions
+- Single difficulty, no scoring depth
 
-============================================================
-CORE FEATURES
-============================================================
-
-- Added the first playable arcade flight-runner prototype.
-- Added responsive aircraft movement using keyboard controls.
-- Added a ten-level campaign with increasing difficulty.
-- Added three difficulty modes:
-
-  - Rookie
-  - Veteran
-  - Extreme
-
-- Added mission-based distance progression.
-- Added environmental obstacles, including:
-
-  - Towers
-  - Floating mines
-
-- Added multiple enemy types, including:
-
-  - Turrets
-  - Patrol aircraft
-  - Chaser aircraft
-
-- Added dynamic weather conditions:
-
-  - Clear
-  - Sunset
-  - Storm
-  - Night
-
-- Added wind effects that influence aircraft movement.
-- Added fuel management.
-- Added collectible coins.
-- Added fuel pickups.
-- Added temporary shield and boost power-ups.
-- Added scoring and mission completion rewards.
-- Added level-complete, game-over, and campaign-complete screens.
-- Added pause and mute functionality.
-- Added procedural particle effects, explosions, rain, and lightning.
-- Added procedural engine sounds, sound effects, and background music.
-- Added a complete HUD displaying mission, score, fuel, and progress data.
-
-============================================================
-CONTROLS
-============================================================
-
-Arrow Keys / WASD
-    Move the aircraft
-
-P
-    Pause or resume the game
-
-M
-    Mute or unmute audio
-
-Enter
-    Select menu options
-
-============================================================
-TECHNICAL INFORMATION
-============================================================
-
-- Built using HTML5 Canvas.
-- Written with vanilla JavaScript, HTML, and CSS.
-- Uses no external libraries or runtime dependencies.
-- Runs directly inside a modern web browser.
-- All gameplay systems are contained inside a single HTML file.
-- Visuals and audio are generated procedurally.
-
-============================================================
-CURRENT LIMITATIONS
-============================================================
-
-- No persistent save or progress system.
-- Player progression resets after closing or refreshing the browser.
-- No boss encounters.
-- No player weapon or shooting system.
-- Limited enemy and obstacle variety.
-- Visual assets are primarily procedural placeholders.
-- Gameplay balance is still experimental.
-- Audio and visual presentation require further polishing.
-
-============================================================
-DEVELOPMENT STATUS
-============================================================
-
-Status: Early Alpha
-
-The core gameplay loop is functional, but the game is still in active
-development. Future versions are expected to expand combat, progression,
-visuals, enemies, level design, and overall presentation.
+STATUS: Proof of concept only. This build establishes that a
+dependency-free single-file Canvas game is viable within the jam's
+"no additional software to install" web-build rules. Everything from
+here is a redesign, not an iteration — see v0.2.0-alpha CHANGELOG for
+the pivot to a top-down flight-combat format.

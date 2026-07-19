@@ -1,167 +1,28 @@
-SKYBOUND: GODFALL — SKYLINK IGNITION
-Version: v0.3.0-alpha
-Previous Version: v0.2.0-alpha
-Release Type: Major Gameplay Update
+SKYBOUND: GODFALL — v0.3.0-alpha "SkyLink Ignition"
+Changes since v0.2.0-alpha
+File: skybound_godfall_v0.3.0-alpha.html
+========================================================
 
-============================================================
-OVERVIEW
-============================================================
+Pure feature addition on top of v0.2.0 — no systems removed, the
+top-down combat core is untouched. This build adds the chain-kill
+combo mechanic that later becomes the basis for the "Kickoff" theme
+integration.
 
-SKYBOUND: GODFALL v0.3.0-alpha introduces SkyLink Ignition,
-the game's first signature mechanic designed around the GameJam theme:
-KICKOFF.
-
-After takeoff, the mission does not fully begin until the player destroys
-the Sky Relay. This first shot ignites the battlefield and connects the
-player to a sequence of marked enemy targets.
-
-Destroying linked enemies before the connection expires builds a SkyLink
-chain, increases score rewards, and grants milestone bonuses.
-
-============================================================
 ADDED
-============================================================
+- Chain-kill combo system: killing enemies in quick succession builds
+  a chain (registerChainKill, considerChainTarget, chooseNextLink)
+- Visual chain-target marking on screen (clearChainMarks)
+- "Ignite" trigger for chain payoff (igniteSky)
+- Kickoff relay wave-start mechanic (spawnKickoffRelay,
+  spawnKickoffWave) — first appearance of the relay-destruction
+  gate that becomes the theme's core mechanic in later builds
 
-- Added the SkyLink Ignition gameplay system.
+UNCHANGED FROM v0.2.0
+- Top-down movement, bosses, radar, level select/unlock logic,
+  fuel/shield/weather systems — no regressions, no removals
 
-- Added a Sky Relay that appears after takeoff.
-
-- Added a kickoff objective requiring the player to destroy the relay
-  before the main assault begins.
-
-- Added an initial enemy formation that spawns when the Sky Relay is
-  destroyed.
-
-- Added connected-target combat.
-
-- Added automatic selection of the next linked enemy target.
-
-- Added a visible energy arc between defeated enemies and the next
-  connected target.
-
-- Added a timed SkyLink chain system.
-
-- Added chain tracking to the HUD.
-
-- Added longest-chain tracking.
-
-- Added chain-based score multipliers.
-
-- Added SkyLink milestone rewards:
-
-  - SkyLink x5:
-    Grants a temporary shield.
-
-  - SkyLink x10:
-    Grants an afterburner boost.
-
-  - SkyLink x15:
-    Restores aircraft hull health.
-
-- Added dedicated SkyLink messages and alerts.
-
-- Added ignition flash effects, screen shake, particles, and sound effects
-  when the Sky Relay is destroyed.
-
-- Added visual highlighting for the currently linked enemy.
-
-- Added a chain-lost notification when a significant SkyLink expires.
-
-============================================================
-CHANGED
-============================================================
-
-- Changed the mission opening sequence.
-
-- After takeoff, the aircraft now enters an armed state and waits for the
-  Sky Relay to be destroyed.
-
-- World progression now begins only after SkyLink Ignition.
-
-- Fuel consumption now begins after the battlefield has been awakened.
-
-- Enemy kills now contribute to the SkyLink chain system.
-
-- Enemy score rewards now increase based on the active chain multiplier.
-
-- Enemy spawning now supports automatic linked-target assignment.
-
-- Combat progression is now built around following marked targets instead
-  of destroying enemies in any random order.
-
-- Updated the game's identity from a standard arcade shooter toward a
-  connected-combat score-chasing experience.
-
-- Added stronger thematic messaging around the concept:
-
-  "The first shot wakes the war."
-
-============================================================
-GAMEPLAY FLOW
-============================================================
-
-1. Accelerate along the runway.
-
-2. Take off and enter the armed flight state.
-
-3. Locate and destroy the Sky Relay.
-
-4. Ignite SkyLink and begin the assault.
-
-5. Follow the energy arc to the marked enemy.
-
-6. Destroy linked targets before the timer expires.
-
-7. Build longer chains to earn increased scores and milestone rewards.
-
-============================================================
 KNOWN LIMITATIONS
-============================================================
-
-- Campaign progress is still not permanently saved after refreshing or
-  closing the browser.
-
-- The SkyLink target-selection system may occasionally choose an
-  inconvenient enemy.
-
-- Chain timing and reward balance are still experimental.
-
-- The Sky Relay currently uses procedural artwork.
-
-- Boss encounters are not fully integrated into the SkyLink chain system.
-
-- Enemy waves are still primarily controlled by timed spawning.
-
-- Visual and audio assets remain mostly procedural or optional.
-
-============================================================
-TECHNICAL INFORMATION
-============================================================
-
-- Built using HTML5 Canvas, vanilla JavaScript, HTML, and CSS.
-
-- Uses no external libraries or runtime dependencies.
-
-- Runs directly inside a modern web browser.
-
-- Remains contained inside a single HTML file.
-
-- Supports optional external sprites with automatic procedural fallback
-  graphics.
-
-- SkyLink targets are tracked using references to active enemy objects.
-
-- Link effects are rendered using temporary visual-effect entities.
-
-============================================================
-DEVELOPMENT STATUS
-============================================================
-
-Status: Experimental Alpha
-
-This version establishes SkyLink Ignition as the game's signature
-KICKOFF mechanic.
-
-Future versions are expected to expand the system with structured waves,
-additional rewards, persistent progress, improved bosses, save systems,
-and stronger visual presentation.
+- Combo system has no milestone rewards yet (chain length is scored
+  but doesn't grant items/power-ups)
+- Still no wave structure within levels, no save system, no
+  difficulty tiers, no missiles/weapon power-ups
