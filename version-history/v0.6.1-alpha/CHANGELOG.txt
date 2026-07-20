@@ -1,0 +1,48 @@
+SKYBOUND: GODFALL — v0.6.1-alpha
+Changes since v0.6.0-alpha
+File: skybound_godfall_v0.6.1-alpha.html
+========================================================
+
+PATCH RELEASE. Typography/rendering only — no gameplay, balance, or
+mechanic changes in this diff.
+
+ADDED
+- Self-hosted local fonts via @font-face, replacing plain system
+  'Courier New' everywhere: Oxanium (variable weight 200-800), Share
+  Tech Mono, and Black Ops One, loaded from a local fonts/ folder
+  (fonts/Oxanium-VariableFont_wght.ttf, fonts/ShareTechMono-Regular.ttf,
+  fonts/BlackOpsOne-Regular.ttf)
+- Three-tier font-role system: FONT_UI (Oxanium — default), FONT_MONO
+  (Share Tech Mono), FONT_DISPLAY (Black Ops One)
+- New helper functions hudTxt() and displayTxt(), wrapping the core
+  txt() helper with the mono/display roles respectively; txt() itself
+  gained an 8th "font" parameter
+- Font roles applied across every screen in the game: main menu
+  title, mission select, boss banners, full HUD (stats/radar), pause
+  menu, controls, settings, save slots, god mode, and all end-of-run
+  panels (Game Over/Victory/Complete) — a complete sweep, not partial
+- Best-effort font preloading at boot via document.fonts.load() for
+  all three families
+
+CHANGED
+- wrap() now accepts optional weight/font parameters (previously
+  hardcoded to Courier New)
+- Default text weight for standard txt() calls changed from "bold" to
+  600, since Oxanium supports a variable weight range
+
+KNOWN LIMITATIONS
+- Font preload is fire-and-forget, NOT blocking: the game boots and
+  starts drawing immediately (requestAnimationFrame fires right away)
+  regardless of whether the font files have finished loading. On a
+  slow first load this can show a brief flash of fallback-font text
+  before the real fonts swap in. This is a deliberate trade-off
+  (faster perceived boot) but worth knowing about — if you'd rather
+  guarantee the first frame is always correct at the cost of a short
+  loading pause, that's a small follow-up change, not a rebuild.
+- Requires the fonts/ folder (with all three .ttf files) to be
+  present alongside index.html. If that folder is missing from the
+  itch.io zip, the game will silently fall back to system fonts
+  everywhere — no error, just wrong-looking text. Double check the
+  zip includes fonts/ before uploading.
+- No gameplay/balance changes — that testing pass is still pending
+  from earlier versions
