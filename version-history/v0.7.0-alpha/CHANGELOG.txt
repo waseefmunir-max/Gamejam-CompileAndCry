@@ -1,0 +1,118 @@
+SKYBOUND: GODFALL — v0.7.0-alpha "The Last Wingman"
+Changes since v0.6.1-alpha
+File: skybound_godfall_v0_7_0-alpha.html
+========================================================
+
+MAJOR CONTENT RELEASE. Full campaign/narrative pass, encounter and
+combat overhaul, and embedded cinematic audio. This is a much larger
+diff than a typical patch — gameplay, presentation, and audio all
+changed. Not a drop-in replacement for save compatibility (see
+KNOWN LIMITATIONS).
+
+ADDED
+- Full story campaign "THE LAST WINGMAN": a 10-chapter narrative
+  (STORY array, one entry per level) with a rival-turned-mentor
+  arc between two named pilots, RAEL and ILYAS. Each chapter has a
+  title, mission objective, pre-mission quote, launch line, timed
+  in-flight radio dialogue (queueRadio/startNextRadio/updateStory),
+  and an outro line
+- New cinematic UI to support the story: briefing screen
+  (drawBriefing), in-flight radio popups (drawRadio), an ending
+  screen (drawEnding/endingData), and a menu-screen aircraft render
+  (drawMenuRaptor)
+- Branching final mission: a moral-choice ending (beginFinalChoice /
+  resolveFinalChoice / drawFinalChoice) lets the player spare or
+  kill the final boss (Rael Voss // Seraph-0), replacing the old
+  fixed "beat the last boss" ending
+- Signature mechanic renamed and expanded: the old "kickoff" chain
+  mechanic is now "SKYLINK IGNITION" — the first shot of a mission
+  (spawnKickoffRelay / igniteSky) sets the mission's "doctrine" for
+  that run, and every subsequent linked kill (registerChainKill)
+  feeds it
+- New CATALYSTS system: three named doctrines (RAPTOR SURGE, ARC
+  STORM, AEGIS LINK) that modify chain behavior for the run —
+  earlier weapon-tier upgrades, chain lightning on linked kills, or
+  periodic shield/fuel restores
+- Escalating weapon system: chain count now directly drives
+  firepower via weaponTier()/effectiveChain() — fireWeapon() and a
+  new fireMissile()/missileExplosion() are explicit, chain-gated
+  systems instead of a flat weapon
+- Encounter director: enemy spawns are no longer purely random.
+  nextFormation() cycles a shuffled bag of named formations (solo,
+  split, v, gate, cross, escort, ambush, stagger, swarm) so the
+  same opening map doesn't repeat, and enemyPool() gates enemy
+  variety by level/difficulty
+- New enemy types: "interceptor" and "specter" (in addition to the
+  existing turret/patrol/chaser/blimp/mine), introduced
+  progressively via enemyPool()
+- Fixed, hand-authored bosses: 4 unique named bosses (IRON HOWL,
+  THE BUTCHER, THE EXECUTIONER, RAEL VOSS // SERAPH-0) via
+  BOSS_PROFILES, each with its own hp/radius/palette and a unique
+  AI/attack pattern per boss stage — replaces the old procedural
+  "12 bosses (4 slots × 3 difficulty skins)" system
+- Embedded cinematic audio: a real background music track and a
+  boss-death cue are now embedded directly in the file as playable
+  HTML5 Audio sources (bgMusic / bossDeathTrack via
+  startMediaAudio()/updateMediaMix()/playBossDeathCue()), layered
+  under the existing procedural WebAudio SFX
+- Deeper procedural SFX: reverb impulse response (makeImpulse),
+  panned/filtered tone and glide helpers, air-noise texture, and
+  named cues for chain links (chainChime) and boss entrances
+  (bossHorn)
+- Seeded run RNG: a per-run xorshift RNG (nextRunRandom/wrand/
+  wirand, seeded via freshSeed()) drives spawns and formations
+  instead of raw Math.random(), so a run's encounter sequence is
+  reproducible from its seed
+- Optional sprite art now targets Kenney's "Pixel Shmup" pack
+  (player/enemy_patrol/enemy_chaser/enemy_interceptor/enemy_bomber/
+  enemy_specter/turret/boss/tiles), replacing the old per-boss
+  sprite-key naming scheme; still falls back to built-in vector art
+  if files are absent
+- New cinematic shell for menus/panels: rounded-rect UI chrome
+  (roundRectPath), a redesigned slider component (drawSlider), and
+  drawCenteredParagraph() for wrapped story/briefing text
+- Responsive canvas: CSS now scales the canvas to the viewport
+  (min(960px, 96vw, 96vh*1.5)) with a softer glow/border treatment,
+  instead of the old fixed-size canvas
+
+CHANGED
+- Title changed from "SKYBOUND: GODFALL — Kickoff Edition" to
+  "SKYBOUND: GODFALL — The Last Wingman"; header comment now
+  describes it as a "Director's Cut visual/cinematic base with the
+  complete gameplay systems"
+- Levels: the biome/terrain system (BIOMES, drawBiomeBase,
+  drawFeature, drawRunway, separate WEATHER_BY_LEVEL array) is gone.
+  Each LEVELS entry now carries its own dist (mission length) and
+  weather list directly, and the mission is framed by story beats
+  instead of a visual biome
+- Coin pickups removed: spawnCoinsRemoved() is now a documented
+  no-op, replacing the old pickup call
+- Font-role handling simplified: txt() now auto-selects
+  FONT_DISPLAY vs FONT_UI based on text size (>=22px = display
+  font) instead of taking an explicit font argument; the dedicated
+  displayTxt() helper from v0.6.1 was removed as a result
+- wrap() no longer accepts weight/font override parameters (it did
+  in v0.6.1); it's hardcoded to weight 500 / FONT_UI. If you relied
+  on custom-styled wrapped text, that override is gone
+- Difficulty enemy rosters expanded per-tier (e.g. ROOKIE now
+  includes "patrol"; VETERAN/EXTREME gain interceptor/bomber/
+  specter) to match the new encounter director
+- Enemy-count scaling formula changed (enemiesForWave now factors
+  in current level, not just wave/difficulty)
+
+KNOWN LIMITATIONS
+- File size jumped from ~78 KB to ~4.5 MB. This is almost entirely
+  the embedded base64 background-music and boss-death-cue audio
+  tracks now baked into the HTML — expected, not a bug, but worth
+  knowing before emailing/hosting the file
+- Old save slots and autosave from v0.6.1 are not guaranteed
+  compatible: boss identity is no longer difficulty-dependent, the
+  biome field is gone from level data, and chain/weapon-tier state
+  shapes have changed. Recommend starting fresh saves on this
+  version rather than carrying v0.6.1 slots forward
+- No local fonts/ or audio/ folder dependency changed from the
+  v0.6.1 patch — those font files are still required alongside
+  index.html for the UI type to render correctly
+- Gameplay/balance testing for the new encounter director,
+  CATALYSTS, and weapon-tier curve is still pending — this is a
+  content and systems drop, not a tuned/verified balance pass
