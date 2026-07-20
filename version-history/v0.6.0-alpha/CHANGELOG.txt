@@ -1,0 +1,55 @@
+SKYBOUND: GODFALL — v0.6.0-alpha "Kickoff"
+Changes since v0.5.0-alpha
+File: skybound_godfall_v0.6.0-alpha.html
+========================================================
+
+REMOVED — Coin economy (full removal)
+- Coins no longer exist as a pickup, currency, or unlock gate.
+  Removed: "coin" from SFX_KEYS, the coin sfx synth, the coin drop
+  timer (tCoin), coin pickup rendering (drawPickup), hud.coins,
+  and coinReq() entirely
+- Level unlocking is now purely progression-based (unlocked() checks
+  only progress[diffIdx][i-1].cleared, no coin threshold)
+- Mission Select, Mission Complete, and Game Over screens no longer
+  display coin totals or coin requirements — replaced with
+  CLEARED/READY status and "clear LVx to unlock" messaging
+- Enter-key shortcut to advance to next level after clearing a
+  mission no longer checks a coin balance
+
+ADDED — Wave kill-counter system
+- New enemiesForWave(waveIndex) helper centralizes wave enemy-count
+  math (previously calculated inline in spawnWave)
+- world.waveKills / world.waveTotal track live progress through the
+  current wave and are reset on spawnRelay, spawnWave, spawnBoss,
+  and boss defeat
+- HUD now displays "💀 kills/total" for the active wave in place of
+  the old coin counter, turning green once the wave is cleared
+
+CHANGED — Pickup drop lifecycle
+- Fuel/HP/power/missile drops now only spawn while a normal combat
+  wave is active (world.waveState==="live" && !boss) — previously
+  could trigger during relay/intermission states too
+- Leftover pickups are explicitly cleared at wave transitions
+  (advanceWave) and on boss spawn (spawnBoss), preventing stray
+  items from earlier waves lingering into the next encounter
+
+CHANGED — Save/progress data integrity
+- Added normalizeProgress() to safely rebuild the progress array on
+  load, dropping the old bestCoins field and guarding against
+  corrupt/partial localStorage data instead of trusting it directly
+- restore() now migrates older save slots that predate waveKills/
+  waveTotal by recalculating them from the restored enemy list
+- restore() filters out any legacy "coin" pickups from old save data
+  so migrated saves don't resurrect the removed economy
+
+FIXED — Relay spawn position
+- Kickoff relay now spawns at a fixed (W/2, 180) instead of a
+  randomized horizontal offset (previously x:W/2+rand(-160,160),
+  y:130), giving it a consistent, predictable entrance
+
+TEXT — Minor copy updates
+- "BLOOD MONEY" level tagline reworded from "coin" to "bounty"
+  phrasing to match the removed coin economy
+- Mission Select subtitle changed from "Clear a mission with enough
+  coins to unlock the next." to "Clear a mission to unlock the next."
+- LOCKED level message simplified to "LOCKED — clear LVx first"
